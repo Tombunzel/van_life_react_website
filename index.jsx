@@ -25,6 +25,7 @@ import NotFound from "./pages/NotFound"
 import Layout from "./components/Layout"
 import HostLayout from "./components/HostLayout"
 import AuthRequired from "./components/AuthRequired"
+import Error from "./components/Error"
 
 import "./server"
 
@@ -44,7 +45,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route index element={<Dashboard />} />
         <Route path="income" element={<Income />} />
         <Route path="reviews" element={<Reviews />} />
-        <Route path="vans" element={<HostVans />} />
+        <Route path="vans" element={<HostVans />} errorElement={Error} />
         <Route path="vans/:id" element={<HostVanDetail />}>
           <Route index element={<HostVanInfo />} />
           <Route path="pricing" element={<HostVanPricing />} />
