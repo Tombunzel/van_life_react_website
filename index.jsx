@@ -30,8 +30,8 @@ import Error from "./components/Error"
 import "./server"
 
 const router = createBrowserRouter(createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
-    <Route index element={<Home />} />
+  <Route path="/" element={<Layout />} >
+    <Route index element={<Home />} errorElement={Error} />
     <Route path="about" element={<About />} />
     <Route path="vans" element={<Vans />} loader={vansLoader} />
     <Route path="vans/:id" element={<VanDetail />} />
@@ -45,7 +45,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route index element={<Dashboard />} />
         <Route path="income" element={<Income />} />
         <Route path="reviews" element={<Reviews />} />
-        <Route path="vans" element={<HostVans />} errorElement={Error} />
+        <Route path="vans" element={<HostVans />} />
         <Route path="vans/:id" element={<HostVanDetail />}>
           <Route index element={<HostVanInfo />} />
           <Route path="pricing" element={<HostVanPricing />} />
